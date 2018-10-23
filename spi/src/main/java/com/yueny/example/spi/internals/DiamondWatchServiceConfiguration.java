@@ -31,14 +31,14 @@ public class DiamondWatchServiceConfiguration implements IWatchServiceConfigurat
 	 * email_addr</br>
 	 * email_address</br>
 	 */
-	private static Set<String> defaultEmailFields = Collections.unmodifiableSet(new HashSet<>(Arrays.asList("email")));
+	private static Set<String> defaultEmailFields = Collections.unmodifiableSet(new HashSet<String>(Arrays.asList("email")));
 	/**
 	 * <p>
 	 * 默认打马赛克的字段， 值不可被修改
 	 * </p>
 	 * 身份证号码</br>
 	 */
-	private static Set<String> defaultMaskFields = Collections.unmodifiableSet(new HashSet<>(Arrays.asList("cardNo",
+	private static Set<String> defaultMaskFields = Collections.unmodifiableSet(new HashSet<String>(Arrays.asList("cardNo",
 			"phone")));
 
 	/**
@@ -54,11 +54,6 @@ public class DiamondWatchServiceConfiguration implements IWatchServiceConfigurat
 	 */
 	private static Set<String> maskFields;
 
-	static {
-		maskFields = defaultMaskFields;
-		emailFields = defaultEmailFields;
-	}
-
 	/* (non-Javadoc)
 	 * @see com.aicai.fw.mask.spi.IWatchServiceConfiguration#getEmailFields()
 	 */
@@ -72,5 +67,17 @@ public class DiamondWatchServiceConfiguration implements IWatchServiceConfigurat
 	public Set<String> getMaskFields(){
 		return maskFields;
 	}
-	
+
+	public boolean isBizMonitor(){
+		return true;
+	}
+
+	@Override
+	public boolean load(){
+		maskFields = defaultMaskFields;
+		emailFields = defaultEmailFields;
+
+		return true;
+	}
+
 }
