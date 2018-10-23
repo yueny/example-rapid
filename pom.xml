@@ -25,6 +25,8 @@
 		<module>rapid-util-sla</module>
 		
 		<module>rapid-message-email</module>
+
+		<module>spi</module>
 	</modules>
 	
 </project>
