@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration scan="true" scanPeriod="30 seconds" debug="true">
+	<!-- 上下文名称 -->
+	<contextName>log-templete</contextName>
+	
+	<!-- 设置变量 -->
+	<property name="LOG_HOME" value="/data/logs/templete/log" />
+	<property name="DEFAULT_PATTERN" value="%d %-5level [%X{ctxTraceId}][%X{ctxLogId}][%thread] %logger{5} - %msg%n" />
+	<property name="STDOUT_PATTERN" value="%d{HH:mm:ss.SSS} %-5level [%X{ctxTraceId}][%X{ctxLogId}] %logger{5} - %msg%n" />
+	<property name="CHARSET" value="UTF-8" />
+	<property name="LEVEL" value="INFO" />
+	<!-- 获取时间戳字符串， 使用时， ${bySecond}  -->
+	<timestamp key="bySecond" datePattern="yyyyMMdd'T'HHmmss"/>
+	
+	<!-- 控制台打印  %-5level为日志级别 -->
+	<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+		<encoder>
+			<pattern>${STDOUT_PATTERN}</pattern>
+		</encoder>
+	</appender>
+	<appender name="STDOUT_ERROR" class="ch.qos.logback.core.ConsoleAppender">
+		<!-- 临界值过滤器，过滤掉低于指定临界值的日志。当日志级别等于或高于临界值时，过滤器返回NEUTRAL；当日志级别低于临界值时，日志会被拒绝。 -->
+		<!-- 过滤掉非ERROR 级别的日志-->   
+		<filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+			<level>ERROR</level>
+		</filter>
+		<target>System.err</target>
+		<encoder>
+			<pattern>[%-5level] [%thread] %date %logger{80} - %msg%n</pattern>
+		</encoder>
+	</appender>
+	
+	<!-- 把日志添加到文件  -->
+	<appender name="SERVICE_FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>${LOG_HOME}/service.log</file>
+		<encoder>
+			<pattern>${DEFAULT_PATTERN}</pattern>
+			<charset>${CHARSET}</charset>
+		</encoder>
+		<!-- TimeBasedRollingPolicy: 根据时间来制定滚动策略，既负责滚动也负责出发滚动 -->
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>${LOG_HOME}/%d{yyyyMMdd}/service.log</fileNamePattern>
+			<maxHistory>30</maxHistory>
+            <cleanHistoryOnStart>true</cleanHistoryOnStart>
+		</rollingPolicy>
+	</appender>
+	<appender name="ERROR_FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>${LOG_HOME}/error.log</file>
+		<filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+			<level>ERROR</level>
+		</filter>
+		<append>true</append>
+		<encoder>
+			<pattern>${DEFAULT_PATTERN}</pattern>
+			<charset>${CHARSET}</charset>
+		</encoder>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>${LOG_HOME}/%d{yyyyMMdd}/error.log</fileNamePattern>
+			<maxHistory>30</maxHistory>
+           	<cleanHistoryOnStart>true</cleanHistoryOnStart>
+		</rollingPolicy>
+	</appender>
+	
+	<!-- 
+	Loggers : 用来设置某一个包或者具体的某一个类的日志打印级别、以及指定<appender>。
+	<loger>可以包含零个或多个<appender-ref>元素，标识这个appender将会添加到这个loger
+	
+	addtivity: 是否向上级loger传递打印信息。默认是true。没有设置addtivity，默认为true，将此loger的打印信息向上级传递；
+	<appender-ref>元素，标识这个appender将会添加到这个loger; 没有设置appender，此loger本身不打印任何信息。
+	-->
+	<logger name="com.yueny.example.log.service" level="${LEVEL}" additivity="false">
+		<appender-ref ref="STDOUT" />
+		<appender-ref ref="STDOUT_ERROR" />
+		<appender-ref ref="SERVICE_FILE"/>
+		<appender-ref ref="ERROR_FILE"/>
+	</logger>
+	
+	<!-- root :  -->
+	<root level="INFO">
+		<appender-ref ref="STDOUT" />
+		<appender-ref ref="SERVICE_FILE"/>
+	</root>
+		
+</configuration>

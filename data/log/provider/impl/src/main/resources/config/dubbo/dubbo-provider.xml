@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+	xmlns="http://www.springframework.org/schema/beans"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans.xsd http://code.alibabatech.com/schema/dubbo
+	http://code.alibabatech.com/schema/dubbo/dubbo.xsd
+	http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-2.5.xsd ">
+
+	<description>dubbo服务提供配置文件</description>
+	
+	<!-- 使用注解方式暴露接口 -->
+    <dubbo:annotation package="com.yueny.example.log.web"/>
+    <!-- 
+	<bean id="userLogTraceService" class="com.yueny.example.log.web.UserLogTraceService"/>
+     -->
+    <bean id="userService" class="com.yueny.example.log.web.UserService"/>
+    
+	<dubbo:service interface="com.yueny.example.log.service.IUserLogTraceService" 
+		ref="userLogTraceService" protocol="dubbo" retries="2" cluster="failfast"/>
+	<dubbo:service interface="com.yueny.example.log.service.IUserService"
+		 ref="userService" protocol="dubbo" cluster="failfast" 
+		 timeout="${dubbo.registry.server.timeout}"/>
+
+</beans>

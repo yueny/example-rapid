@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+       		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+	
+	<!-- method 1
+	<context:property-placeholder location="classpath:/properties/*.properties" ignore-unresolvable="true"/>
+	 -->
+	
+	<!-- method 2 -->
+	<bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="locations">
+			<list>
+				<value>classpath:/properties/*.properties</value>
+			</list>
+		</property>
+	</bean>
+	
+	<!-- method 3
+    <bean id="localConfigProperties" class="org.springframework.beans.factory.config.PropertiesFactoryBean">
+        <property name="locations">
+            <list>
+                <value>classpath:/properties/app.properties</value>
+            </list>
+        </property>
+        <property name="ignoreResourceNotFound" value="true"/>
+    </bean>
+
+    <bean id="sysProperty" class="org.springframework.beans.factory.config.PreferencesPlaceholderConfigurer">
+        <property name="propertiesArray">
+            <list>
+                <ref bean="localConfigProperties"/>
+            </list>
+        </property>
+    </bean>
+	 -->
+
+</beans>

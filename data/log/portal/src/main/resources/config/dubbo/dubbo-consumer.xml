@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:dubbo="http://code.alibabatech.com/schema/dubbo" xmlns="http://www.springframework.org/schema/beans"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans.xsd
+	http://code.alibabatech.com/schema/dubbo
+	http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+	
+	<!-- 
+	服务配置  
+	-->
+	<dubbo:application name="${dubbo.consumer.application.name}"
+		owner="${dubbo.consumer.application.owner}" 
+		organization="${dubbo.consumer.application.organization}" />
+	<!-- registry address, used for service to register itself -->
+	<dubbo:registry protocol="${dubbo.consumer.registry.protocol}" 
+		address="${dubbo.consumer.registry.address}" />
+		
+	<!--  -->
+	<dubbo:consumer timeout="${dubbo.registry.server.timeout}"
+		filter="${dubbo.consumer.filter}"/>
+		
+	<dubbo:reference id="userLogTraceService"
+		interface="com.yueny.example.log.service.IUserLogTraceService" check="false"/>
+	<dubbo:reference id="userService"
+		interface="com.yueny.example.log.service.IUserService" check="false"/>
+		
+</beans>

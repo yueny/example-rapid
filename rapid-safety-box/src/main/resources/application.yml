@@ -1,0 +1,15 @@
+# 服务器配置
+server:
+   port: 8111
+   sessionTimeout: 45
+   contextPath: /
+   
+spring:
+   aop: 
+      proxy-target-class: true
+
+# 覆盖配置中心的配置
+mysql:
+   url: jdbc:mysql://localhost:3306/safety
+   username: root
+   password: root

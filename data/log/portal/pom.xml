@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+    	<groupId>com.yueny.base</groupId>
+		<artifactId>parent_boot</artifactId>
+		<version>1.1.2-SNAPSHOT</version>
+	</parent>
+    
+    <groupId>com.yueny.rapid.data.example</groupId>
+    <artifactId>example-log-login</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+    <packaging>war</packaging>
+	
+	<properties>
+		<java.version>1.8</java.version>
+		<yueny.rapid.data.log.core.latest.version>1.0.1-SNAPSHOT</yueny.rapid.data.log.core.latest.version>
+		
+		<cfg.diamond.client.version>3.4-GA-SNAPSHOT</cfg.diamond.client.version>
+	</properties>
+	
+    <dependencies>
+        <dependency>
+            <groupId>com.yueny.rapid.data.example</groupId>
+            <artifactId>example-log-usercenter-api</artifactId>
+            <version>1.0.0-SNAPSHOT</version>
+        </dependency>
+        
+        <dependency>
+            <groupId>com.yueny.rapid.data</groupId>
+			<artifactId>rapid-data-log-core</artifactId>
+			<version>${yueny.rapid.data.log.core.latest.version}</version>
+			<exclusions>
+				<exclusion>
+		            <groupId>ch.qos.logback</groupId>
+		            <artifactId>logback-classic</artifactId>
+				</exclusion>
+			</exclusions>
+        </dependency>
+        <dependency>
+            <groupId>com.yueny.rapid.data</groupId>
+			<artifactId>rapid-data-storage-dubbox</artifactId>
+			<version>${yueny.rapid.data.log.core.latest.version}</version>
+        </dependency>
+        
+        <dependency>
+			<groupId>com.yueny.rapid.data</groupId>
+			<artifactId>rapid-data-resp</artifactId>
+			<version>${yueny.rapid.data.log.core.latest.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.yueny.rapid.util</groupId>
+			<artifactId>rapid-util-sla</artifactId>
+			<version>1.0.1-SNAPSHOT</version>
+		</dependency>
+		
+		<dependency>
+			 <groupId>com.taobao.diamond</groupId>
+			 <artifactId>diamond-client</artifactId>
+			 <version>${cfg.diamond.client.version}</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter</artifactId>
+		</dependency>
+		
+		<dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-autoconfigure</artifactId>
+        </dependency>
+		<dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-jetty</artifactId>
+		</dependency>
+		<!-- Test -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-webmvc</artifactId>
+		</dependency>
+		<dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-tx</artifactId>
+        </dependency>
+        
+        <!-- dubbo 服务的链路监控 -->
+		<dependency>
+            <groupId>io.zipkin.brave</groupId>
+            <artifactId>brave-dubbo</artifactId>
+            <version>1.0.0-SNAPSHOT</version>
+        </dependency>
+        
+        <dependency>
+            <groupId>org.aspectj</groupId>
+            <artifactId>aspectjweaver</artifactId>
+        </dependency>
+
+        <!-- JSON  -->
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-core</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-annotations</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+        </dependency>
+		
+		 
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>jcl-over-slf4j</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>log4j-over-slf4j</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>ch.qos.logback</groupId>
+			<artifactId>logback-classic</artifactId>
+		</dependency>
+		
+        <!-- dubbo扩展 -->
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>dubbo</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.101tec</groupId>
+            <artifactId>zkclient</artifactId>
+        </dependency>
+    </dependencies>
+
+    <build>
+		<plugins>
+			<plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+            </plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-eclipse-plugin</artifactId>
+			</plugin>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+		</plugins>
+	</build>
+	
+</project>

@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.yueny</groupId>
+		<artifactId>yueny-parent</artifactId>
+		<version>1.1.5-RELEASE</version>
+	</parent>
+
+	<groupId>com.yueny</groupId>
+    <artifactId>example-mybatis-plus</artifactId>
+	<version>1.0.0-SNAPSHOT</version>
+	<packaging>jar</packaging>
+
+	<properties>
+		<java.version>1.8</java.version>
+		<spring.boot.version>1.5.3.RELEASE</spring.boot.version>
+
+		<rapid.version>1.0.1-SNAPSHOT</rapid.version>
+
+		<baomidou.mybatis.plus.version>3.0-RC1</baomidou.mybatis.plus.version>
+	</properties>
+
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-dependencies</artifactId>
+				<version>${spring.boot.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-aop</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-autoconfigure</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-actuator</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-freemarker</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-configuration-processor</artifactId>
+			<optional>true</optional>
+		</dependency>
+
+		<dependency>
+		    <groupId>com.yueny</groupId>
+			<artifactId>api</artifactId>
+			<version>${rapid.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.yueny.rapid.lang</groupId>
+			<artifactId>rapid-lang-util</artifactId>
+			<version>${rapid.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.yueny.rapid.lang</groupId>
+			<artifactId>rapid-lang-thread</artifactId>
+			<version>${rapid.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.yueny.rapid.lang</groupId>
+			<artifactId>rapid-lang-dozer</artifactId>
+			<version>${rapid.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.yueny.rapid.data</groupId>
+			<artifactId>rapid-data-resp</artifactId>
+			<version>${rapid.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.yueny.rapid.data</groupId>
+			<artifactId>rapid-data-log-core</artifactId>
+			<version>${rapid.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.yueny.rapid.util</groupId>
+			<artifactId>rapid-util-exec</artifactId>
+			<version>${rapid.version}</version>
+		</dependency>
+
+        <!-- Project Lombok -->
+		<dependency>
+	        <groupId>org.projectlombok</groupId> 
+	        <artifactId>lombok</artifactId>
+	        <scope>provided</scope>
+	    </dependency>
+        <dependency>
+			<groupId>net.sf.dozer</groupId>
+			<artifactId>dozer</artifactId>
+		</dependency>
+
+		<!-- jdbc驱动包  -->
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.alibaba</groupId>
+			<artifactId>druid</artifactId>
+		</dependency>
+		<!-- mybatis dependency -->
+		<dependency>
+			<groupId>org.mybatis</groupId>
+			<artifactId>mybatis</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.mybatis</groupId>
+			<artifactId>mybatis-spring</artifactId>
+		</dependency>
+		<!-- spring boot mybatis-plus -->
+		<dependency>
+			<groupId>com.baomidou</groupId>
+			<artifactId>mybatis-plus-boot-starter</artifactId>
+			<version>${baomidou.mybatis.plus.version}</version>
+		</dependency>
+
+        <!-- log扩展 -->
+        <dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>jcl-over-slf4j</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>log4j-over-slf4j</artifactId>
+		</dependency>
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+        </dependency>
+
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-annotations</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-databind</artifactId>
+		</dependency>
+
+		<!-- 测试用例 -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.mockito</groupId>
+			<artifactId>mockito-all</artifactId>
+			<scope>test</scope>
+		</dependency>
+    </dependencies>
+
+	<build>
+		<resources>
+			<resource>
+				<directory>src/main/resources</directory>
+			</resource>
+		</resources>
+
+		<testResources>
+			<testResource>
+				<directory>src/test/java</directory>
+			</testResource>
+			<testResource>
+				<directory>src/test/resources</directory>
+			</testResource>
+		</testResources>
+
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+				<version>${spring.boot.version}</version>
+				<configuration>
+					<executable>true</executable>
+				</configuration>
+				<executions>
+					<execution>
+						<goals>
+							<goal>repackage</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-eclipse-plugin</artifactId>
+			</plugin>
+		</plugins>
+	</build>
+
+</project>

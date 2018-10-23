@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+    	<groupId>com.yueny.rapid.data.example</groupId>
+	    <artifactId>example-log-usercenter</artifactId>
+	    <version>1.0.0-SNAPSHOT</version>
+    </parent>
+    
+    <artifactId>example-log-usercenter-impl</artifactId>
+    <packaging>jar</packaging>
+
+    <dependencies>
+    	<dependency>
+            <groupId>com.yueny.rapid.data.example</groupId>
+            <artifactId>example-log-usercenter-api</artifactId>
+            <version>1.0.0-SNAPSHOT</version>
+        </dependency>
+        
+    	<!-- kapo-jpa -->
+		<dependency>
+			<groupId>com.yueny.kapo</groupId>
+	        <artifactId>kapo-api</artifactId>
+			<version>1.2.0-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>com.yueny.kapo</groupId>
+	        <artifactId>kapo-core</artifactId>
+			<version>1.2.0-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+		    <groupId>com.yueny.rapid</groupId>
+			<artifactId>api</artifactId>
+			<version>${yueny.rapid.data.log.core.latest.version}</version>
+		</dependency>
+		
+        <dependency>
+            <groupId>com.yueny.rapid.data</groupId>
+			<artifactId>rapid-data-log-core</artifactId>
+			<version>${yueny.rapid.data.log.core.latest.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.yueny.rapid.data</groupId>
+			<artifactId>rapid-data-storage-dubbox</artifactId>
+			<version>${yueny.rapid.data.log.core.latest.version}</version>
+        </dependency>
+		<dependency>
+			<groupId>com.yueny.rapid.util</groupId>
+			<artifactId>rapid-util-exec</artifactId>
+			<version>${yueny.rapid.data.log.core.latest.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.yueny.rapid.lang</groupId>
+			<artifactId>rapid-lang-dozer</artifactId>
+			<version>${yueny.rapid.data.log.core.latest.version}</version>
+		</dependency>
+		
+		<!-- dubbo 服务的链路监控 -->
+		<dependency>
+            <groupId>io.zipkin.brave</groupId>
+            <artifactId>brave-dubbo</artifactId>
+            <version>1.0.0-SNAPSHOT</version>
+        </dependency>
+        
+        <!-- Project Lombok -->
+		<dependency>
+	        <groupId>org.projectlombok</groupId> 
+	        <artifactId>lombok</artifactId>
+	        <scope>provided</scope>
+	    </dependency>
+        <dependency>
+			<groupId>net.sf.dozer</groupId>
+			<artifactId>dozer</artifactId>
+		</dependency>
+		
+        <!-- log扩展 -->
+        <dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>jcl-over-slf4j</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>log4j-over-slf4j</artifactId>
+		</dependency>
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+        </dependency>
+		
+		<!-- DB Dependencies -->
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.alibaba</groupId>
+			<artifactId>druid</artifactId>
+		</dependency>
+		<!-- mybatis dependency -->
+		<dependency>
+			<groupId>org.mybatis</groupId>
+			<artifactId>mybatis</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.mybatis</groupId>
+			<artifactId>mybatis-spring</artifactId>
+		</dependency>
+		
+        <!-- dubbo扩展 -->
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>dubbo</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.101tec</groupId>
+            <artifactId>zkclient</artifactId>
+        </dependency>
+        
+        <dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<scope>test</scope>
+		</dependency>
+    </dependencies>
+    
+</project>

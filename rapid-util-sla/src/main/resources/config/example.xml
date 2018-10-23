@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:c="http://www.springframework.org/schema/c"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:tx="http://www.springframework.org/schema/tx" xmlns:task="http://www.springframework.org/schema/cache"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd"
+	   default-autowire="byName">
+	
+	<!-- 分布式锁 -->
+	<bean id="distriLock" class="com.yueny.rapid.topic.distributed.lock.redis.DistributedUnReentryRedisLock"
+		p:pool-ref="redisStringTemplate" p:rockon="true"></bean>
+
+	<bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="locations">
+			<list>
+				<value>classpath:/properties/redis.properties</value>
+				<value>classpath:/properties/app.properties</value>
+			</list>
+		</property>
+	</bean>
+	
+</beans>

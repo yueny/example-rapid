@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>跳轉至支付網關</title>
+</head>
+<body>
+	
+	<form action="http://120.26.106.157:9113/gw/pay" method="post">
+		版本：<input name="version" value="1.0" />
+		业务代号：<input name="product" value="01" />
+		商户ID：<input name="merchantId" value="0003" />
+		信程账号：<input name="accountNo" value="" />
+		手机号：<input name="mobile" value="13913863141" />
+		订单来源：<input name="channel" value="H5" />
+		notifyUrl：<input name="notifyUrl" value="xxx" />
+		returnUrl：<input name="returnUrl" value="xxx" />
+		商户用户ID：<input name="userId" value="123" />
+		交易类型：<input name="tradeType" value="CONSUME" />
+		外部订单号：<input name="outOrderId" value="12123" />
+		订单时间：<input name="orderTime" value="20160612000000" />
+		商品名称：<input name="goodsName" value="商品名称" />
+		订单信息：<input name="orderInfo" value="info" />
+		商品编号：<input name="goodsNo" value="56dg67" />
+		订单金额：<input name="orderMoney" value="10000" />
+		分期金额：<input name="creditMoney" value="10000" />
+		分期数：<input name="numCredit" value="6" />
+		订单过期时间（分钟）：<input name="expireMin" value="60" />
+		签名类型：<input name="signType" value="MD5" />
+		签名：<input name="sign" value="52f2a5981e0d7029012af591aa540610" />
+		
+		<input type="submit" value="去支付"/>
+	</form>
+</body>
+</html>

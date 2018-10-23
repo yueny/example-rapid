@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource" 
+		destroy-method="close">
+		<property name="driverClassName" value="${db.mysql.jdbc.driverClassName}"/>
+		<property name="url" value="${db.mysql.jdbc.url}" />
+		<property name="username" value="${db.mysql.jdbc.username}" />
+		<property name="password" value="${db.mysql.jdbc.password}" />
+		<!-- 
+		<property name="connectionProperties" value="config.decrypt=true"/>
+		 -->
+		<!-- Connection Pooling Info -->
+		<property name="filters" value="${db.mysql.jdbc.filters}" />
+		<property name="maxActive" value="${db.mysql.jdbc.maxActive}" />
+		<property name="initialSize" value="${db.mysql.jdbc.initialSize}" />
+		<property name="maxWait" value="${db.mysql.jdbc.maxWait}" />
+		<property name="minIdle" value="${db.mysql.jdbc.minIdle}" />
+		<property name="timeBetweenEvictionRunsMillis" value="${db.mysql.jdbc.timeBetweenEvictionRunsMillis}" />
+		<property name="minEvictableIdleTimeMillis" value="${db.mysql.jdbc.minEvictableIdleTimeMillis}" />
+		<property name="validationQuery" value="${db.mysql.jdbc.validationQuery}" />
+		<property name="testWhileIdle" value="${db.mysql.jdbc.testWhileIdle}" />
+		<!-- 这里建议配置为TRUE，防止取到的连接不可用 -->
+		<property name="testOnBorrow" value="${db.mysql.jdbc.testOnBorrow}" />
+		<property name="testOnReturn" value="${db.mysql.jdbc.testOnReturn}" />
+	</bean>
+
+</beans>  
