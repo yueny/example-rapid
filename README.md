@@ -1,4 +1,4 @@
-## example
+## example-rapid
 
 例子
 
