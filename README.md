@@ -1,2 +1,4 @@
-# example-rapid
-example-rapid
+## example
+
+例子
+
