@@ -37,7 +37,7 @@ public class HealthyStepJock {
 	@Scheduled(fixedRate = 3000)
 	public void doSomething() {
 		// step 5
-		send("yuanyang", "yuany@aicaigroup.com");
+		send("yuanyang", "deep_vlue_yang@163.com");
 	}
 
 	private boolean send(final String userName, final String to) {
