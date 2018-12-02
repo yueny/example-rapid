@@ -29,6 +29,7 @@ public class HealthyStepJock {
 	/**
 	 * 默认的执行方式是串行执行
 	 *
+	 *
 	 * @Scheduled 注解用于标注这个方法是一个定时任务的方法，有多种配置可选。<br>
 	 *            cron支持cron表达式，指定任务在特定时间执行；<br>
 	 *            fixedRate以特定频率执行任务， 单位 毫秒milliseconds；<br>
