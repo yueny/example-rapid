@@ -37,7 +37,7 @@ public class CheckJockForEmailJob {
 	 */
 	@Scheduled(cron = "0/30 * * * * ?")
 	public void doSomething() {
-		send("yuanyang", "yuany@aicaigroup.com");
+		send("yuanyang", "deep_vlue_yang@163.com");
 	}
 
 	private boolean send(final String userName, final String to) {
