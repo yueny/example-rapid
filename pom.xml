@@ -18,9 +18,6 @@
 		<module>rapid-topic-distributed-lock</module>
 		<module>rapid-topic-profiler</module>
 		
-		<module>rapid-data-log-core</module>
-		<module>rapid-data-log-core-for-dubbo</module>
-		
 		<module>rapid-util-exec</module>
 		<module>rapid-util-sla</module>
 		
