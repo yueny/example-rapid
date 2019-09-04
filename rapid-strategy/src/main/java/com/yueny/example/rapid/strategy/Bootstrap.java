@@ -1,10 +1,9 @@
-package com.miz.example.rapid.safety.box;
+package com.yueny.example.rapid.strategy;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.ImportResource;
 
 /**
@@ -15,16 +14,12 @@ import org.springframework.context.annotation.ImportResource;
  * @DATE 2017年3月9日 下午5:53:29
  */
 @SpringBootApplication
-@ComponentScan(basePackages = {
-		"com.miz.example.rapid.safety.box"
-		})
-@ImportResource(locations = {"classpath*:/config/example.xml"})
+//@ImportResource(locations = {"classpath*:/config/example.xml"})
 public class Bootstrap {
 	/**
 	 * 日志记录器
 	 */
-	private static final Logger logger = LoggerFactory
-			.getLogger(Bootstrap.class);
+	private static final Logger logger = LoggerFactory.getLogger(Bootstrap.class);
 
 	public static void main(final String[] args) {
 		try {

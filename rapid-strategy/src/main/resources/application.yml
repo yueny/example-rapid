@@ -1,0 +1,8 @@
+server:
+   port: 8110
+   sessionTimeout: 45
+     contextPath: /
+
+spring:
+ aop:
+   proxy-target-class: true

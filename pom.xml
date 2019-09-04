@@ -13,7 +13,7 @@
 	</properties>
 	
 	<modules>
-		<module>rapid-safety-box</module>
+		<module>rapid-strategy</module>
 		
 		<module>rapid-topic-distributed-lock</module>
 		<module>rapid-topic-profiler</module>

@@ -1,4 +1,4 @@
-package com.miz.example.rapid.safety.box.controller;
+package com.yueny.example.rapid.strategy.controller;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
