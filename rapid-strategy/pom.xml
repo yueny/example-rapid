@@ -49,7 +49,12 @@
 	        <groupId>org.springframework.boot</groupId>
 	        <artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
-		
+
+		<dependency>
+			<groupId>com.yueny.rapid</groupId>
+			<artifactId>rapid-data-resp</artifactId>
+			<version>1.0.1-SNAPSHOT</version>
+		</dependency>
 		<dependency>
 			<groupId>com.yueny</groupId>
 			<artifactId>rapid-strategy</artifactId>

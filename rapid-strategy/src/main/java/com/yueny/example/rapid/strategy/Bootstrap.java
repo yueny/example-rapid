@@ -1,10 +1,13 @@
 package com.yueny.example.rapid.strategy;
 
+import com.yueny.superclub.util.strategy.annotation.EnableStrategy;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.annotation.ImportResource;
+import org.springframework.cache.annotation.EnableCaching;
+import org.springframework.context.annotation.EnableAspectJAutoProxy;
+import org.springframework.scheduling.annotation.EnableAsync;
 
 /**
  * Quick start<br>
@@ -14,6 +17,8 @@ import org.springframework.context.annotation.ImportResource;
  * @DATE 2017年3月9日 下午5:53:29
  */
 @SpringBootApplication
+@EnableStrategy
+//@EnableAspectJAutoProxy
 //@ImportResource(locations = {"classpath*:/config/example.xml"})
 public class Bootstrap {
 	/**
