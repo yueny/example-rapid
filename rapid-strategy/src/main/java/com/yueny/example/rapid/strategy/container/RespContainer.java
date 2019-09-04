@@ -7,11 +7,12 @@ import com.yueny.superclub.util.strategy.container.StrategyContainerImpl;
 import org.springframework.stereotype.Service;
 
 /**
+ * 第一种容器实现
+ *
  * @Author yueny09 <deep_blue_yang@126.com>
  * @Date 2019-09-04 15:12
  */
-
-@Service
+//@Service
 public class RespContainer implements IRespContainer {
     private IStrategyContainer<RespType, IRespStrategy> strategyContainer
             = new StrategyContainerImpl<RespType, IRespStrategy>() {
