@@ -8,7 +8,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.context.annotation.EnableAspectJAutoProxy;
 import org.springframework.scheduling.annotation.EnableAsync;
- 
+
 /**
  * Quick start<br>
  * 用于快速启动和关闭job服务
@@ -17,7 +17,7 @@ import org.springframework.scheduling.annotation.EnableAsync;
  * @DATE 2017年3月9日 下午5:53:29
  */
 @SpringBootApplication
-@EnableStrategy
+@EnableStrategy(performance=true)
 //@EnableAspectJAutoProxy
 //@ImportResource(locations = {"classpath*:/config/example.xml"})
 public class Bootstrap {

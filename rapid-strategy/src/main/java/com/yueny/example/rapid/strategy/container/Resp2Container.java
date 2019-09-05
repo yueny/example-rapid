@@ -12,22 +12,7 @@ import org.springframework.stereotype.Service;
  * @Date 2019-09-04 15:12
  */
 @Service
-public class Resp2Container extends StrategyContainerImpl<RespType, IRespStrategy> implements IRespContainer {
-//    private IStrategyContainer<RespType, IRespStrategy> strategyContainer
-//            = new StrategyContainerImpl<RespType, IRespStrategy>() {
-//    };
-//
-//    @Override
-//    public IRespStrategy getStrategy(RespType type) {
-//        if (type == null) {
-//            return null;
-//        }
-//
-//        IRespStrategy strategy = super.getStrategy(type);
-//        if (strategy == null) {
-//            return null;
-//        }
-//
-//        return strategy;
-//    }
+public class Resp2Container extends StrategyContainerImpl<RespType, IRespStrategy>
+        implements IRespContainer {
+    //.
 }
